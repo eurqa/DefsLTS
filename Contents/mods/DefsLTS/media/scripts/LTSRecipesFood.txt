@@ -280,21 +280,12 @@ module DLTS {
   
   /** ------------------------------------------------------------------------- **/
   /** Preparing Bits from Food Items **/
-  
+
   recipe LTS Cut Bits of Meat {
-    keep HuntingKnife/KitchenKnife/BreadKnife/MeatCleaver/Machete/FlintKnife,
-    MuttonChop/PorkChop/Steak/Rabbitmeat/Salmon/FishFillet,
-    Result:LTSBitsMeat=7,
-    Sound:PZ_FoodSlicing,
-    Time:40.0,
-    Category:LTS-Food,
-    OnGiveXP:CraftXP_FoodBase,
-  }
-  
-  recipe LTS Cut Bits of Meat {
-    keep HuntingKnife/KitchenKnife/BreadKnife/MeatCleaver/Machete/FlintKnife,
-    Smallanimalmeat/Smallbirdmeat,
-    Result:LTSBitsMeat=3,
+    keep [Recipe.GetItemTypes.SharpKnife]/MeatCleaver/Machete,
+    MuttonChop/PorkChop/Steak/Rabbitmeat/Salmon/FishFillet/Smallanimalmeat/Smallbirdmeat,
+    Result:LTSBitsMeat=1,
+    OnCreate:GiveMeatBits,
     Sound:PZ_FoodSlicing,
     Time:40.0,
     Category:LTS-Food,
